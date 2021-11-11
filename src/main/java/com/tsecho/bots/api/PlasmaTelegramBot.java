@@ -147,9 +147,10 @@ public class PlasmaTelegramBot extends TelegramWebhookBot {
                     }
                 }
                 if(k == 0){
-                    db.saveUsers(id);
+
+                    //db.saveUsers(id);
                 }
-                System.out.println(db.getAllProfiles());
+                System.out.println(id.getIdInTelegram());
 
                 replyMsg.setText("Здравствуйте. Я Телеграмм-Бот, который представляет из себя Фриланс-Сервис" +
                         " для программистов.\n" +
