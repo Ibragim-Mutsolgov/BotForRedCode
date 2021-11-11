@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class DBService {
-    private UsersProfile usersProfile;
+    private final UsersProfile usersProfile;
 
     public DBService(UsersProfile usersProfile){
         this.usersProfile = usersProfile;

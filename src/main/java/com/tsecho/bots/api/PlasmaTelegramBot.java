@@ -70,7 +70,6 @@ public class PlasmaTelegramBot extends TelegramWebhookBot {
     @Autowired
     WorkResponse workResponse;
 
-
     @Autowired
     Keyboard kb;
 
@@ -140,7 +139,6 @@ public class PlasmaTelegramBot extends TelegramWebhookBot {
                 Identification id = new Identification();
                 id.setIdInTelegram(update.getMessage().getFrom().getId().toString());
 
-                usersProfile.saveAndFlush(id);
                 int k = 0;
                 for(int i=0; i<db.getAllProfiles().size(); i++) {
                     if(db.getAllProfiles().get(i) == id) {
