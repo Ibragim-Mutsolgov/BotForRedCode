@@ -141,7 +141,7 @@ public class PlasmaTelegramBot extends TelegramWebhookBot {
                 id.setIdInTelegram(update.getMessage().getFrom().getId().toString());
                 int k = 0;
                 for(int i=0; i<db.getAllProfiles().size(); i++) {
-                    if(db.getAllProfiles().get(i) == id) {
+                    if(db.getAllProfiles().get(i).getIdInTelegram() == id.getIdInTelegram()) {
                         k = 1;
                         break;
                     }
@@ -149,7 +149,7 @@ public class PlasmaTelegramBot extends TelegramWebhookBot {
                 if(k == 0){
                     db.saveUsers(id);
                 }
-                System.out.println(db.getAllProfiles().get(0).getIdInTelegram());
+                System.out.println(db.getAllProfiles());
 
                 replyMsg.setText("Здравствуйте. Я Телеграмм-Бот, который представляет из себя Фриланс-Сервис" +
                         " для программистов.\n" +
