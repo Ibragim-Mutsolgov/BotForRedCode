@@ -140,6 +140,7 @@ public class PlasmaTelegramBot extends TelegramWebhookBot {
                 Identification id = new Identification();
                 id.setIdInTelegram(update.getMessage().getFrom().getId().toString());
 
+                db.saveUsers(id);
                 int k = 0;
                 for(int i=0; i<db.getAllProfiles().size(); i++) {
                     if(db.getAllProfiles().get(i) == id) {
@@ -148,7 +149,6 @@ public class PlasmaTelegramBot extends TelegramWebhookBot {
                     }
                 }
                 if(k == 0){
-
                     db.saveUsers(id);
                 }
                 System.out.println(id.getIdInTelegram());
