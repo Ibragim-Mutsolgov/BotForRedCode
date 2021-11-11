@@ -18,7 +18,7 @@ public class DBService {
     public List<Identification> getAllProfiles(){ return usersProfile.findAll(); }
 
     @Transactional
-    public void saveUsers(Identification identification) { usersProfile.save(identification); }
+    public void saveUsers(Identification identification) { usersProfile.saveAndFlush(identification); }
 
     @Transactional
     public void deleteUsers(String id) { usersProfile.deleteById(id); }
